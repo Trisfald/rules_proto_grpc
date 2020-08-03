@@ -366,6 +366,7 @@ def proto_compile_aspect_impl(target, ctx):
                 [option.replace("{name}", ctx.label.name) for option in plugin.options],
             ), out_arg)
         args.add("--{}_out={}".format(plugin_name, out_arg))
+        args.add("--experimental_allow_proto3_optional")
 
         # Add source proto files as descriptor paths
         for proto in protos:
